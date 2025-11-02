@@ -844,6 +844,7 @@ let userAnswers = [];
 let isLoggedIn = false;
 let currentUser = null;
 let userResults = [];
+let savedCareers = [];
 let displayedCareers = 12; // Number of careers to show initially
 const careersPerLoad = 12; // Number of careers to load when clicking "Load More"
 
@@ -901,8 +902,10 @@ function init() {
     setupEventListeners();
     updateAssessment();
     loadUserData();
+    loadSavedCareers();
     checkBackToTop();
     populateCareerPaths();
+    updateSaveButtons();
 }
 
 // Set up all event listeners
@@ -1072,6 +1075,7 @@ function handleLogin(e) {
             isLoggedIn = true;
             currentUser = user;
             saveUserData();
+            loadSavedCareers();
             closeAuthModal();
             updateAuthUI();
             showNotification('Login successful!', 'success');
@@ -1118,7 +1122,8 @@ function handleSignup(e) {
             email,
             password,
             joined: new Date().toISOString(),
-            results: []
+            results: [],
+            savedCareers: []
         };
         
         users.push(newUser);
@@ -1126,6 +1131,7 @@ function handleSignup(e) {
         
         isLoggedIn = true;
         currentUser = newUser;
+        savedCareers = [];
         saveUserData();
         closeAuthModal();
         updateAuthUI();
@@ -1153,6 +1159,7 @@ function updateAuthUI() {
 function saveUserData() {
     if (currentUser) {
         currentUser.results = userResults;
+        currentUser.savedCareers = savedCareers;
         
         // Update user in localStorage
         const users = JSON.parse(localStorage.getItem('lifeNavigatorUsers')) || [];
@@ -1180,6 +1187,138 @@ function loadUserData() {
     }
 }
 
+// Load saved careers from user data
+function loadSavedCareers() {
+    if (currentUser && currentUser.savedCareers) {
+        savedCareers = currentUser.savedCareers;
+    } else {
+        savedCareers = [];
+    }
+}
+
+// Save career function
+function saveCareer(careerId) {
+    if (!isLoggedIn) {
+        openAuthModal('signup');
+        return false;
+    }
+    
+    const career = careerDatabase.find(c => c.id === careerId);
+    if (!career) return false;
+    
+    // Check if already saved
+    if (savedCareers.some(c => c.id === careerId)) {
+        // Remove from saved
+        savedCareers = savedCareers.filter(c => c.id !== careerId);
+        showNotification('Career removed from saved', 'success');
+    } else {
+        // Add to saved
+        savedCareers.push(career);
+        showNotification('Career saved successfully!', 'success');
+    }
+    
+    // Update user data
+    if (currentUser) {
+        currentUser.savedCareers = savedCareers;
+        saveUserData();
+    }
+    
+    // Update UI
+    updateSaveButtons();
+    renderSavedCareers();
+    
+    return true;
+}
+
+// Update save buttons based on saved state
+function updateSaveButtons() {
+    // Update save buttons in career paths
+    document.querySelectorAll('.path-card').forEach(card => {
+        const careerId = parseInt(card.dataset.id);
+        const saveBtn = card.querySelector('.save-btn');
+        if (saveBtn) {
+            const isSaved = savedCareers.some(c => c.id === careerId);
+            saveBtn.innerHTML = isSaved ? 
+                '<i class="fas fa-bookmark"></i> Saved' : 
+                '<i class="far fa-bookmark"></i> Save';
+            saveBtn.classList.toggle('saved', isSaved);
+        }
+    });
+    
+    // Update save buttons in results
+    document.querySelectorAll('.result-card').forEach(card => {
+        const careerId = parseInt(card.dataset.id);
+        const saveBtn = card.querySelector('.save-path-btn');
+        if (saveBtn) {
+            const isSaved = savedCareers.some(c => c.id === careerId);
+            saveBtn.innerHTML = isSaved ? 
+                '<i class="fas fa-bookmark"></i> Saved' : 
+                '<i class="far fa-bookmark"></i> Save Path';
+            saveBtn.classList.toggle('saved', isSaved);
+        }
+    });
+}
+
+// Render saved careers in dashboard
+function renderSavedCareers() {
+    const savedContainer = document.getElementById('saved-careers-container');
+    if (!savedContainer) return;
+    
+    if (savedCareers.length === 0) {
+        savedContainer.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-bookmark" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                <h4>No Saved Careers Yet</h4>
+                <p>Start exploring careers and save your favorites to review later</p>
+                <button class="btn btn-primary" onclick="document.querySelector('#career-paths').scrollIntoView({ behavior: 'smooth' })">
+                    Explore Careers
+                </button>
+            </div>
+        `;
+        return;
+    }
+    
+    savedContainer.innerHTML = savedCareers.map(career => `
+        <div class="saved-career-item">
+            <div class="saved-career-content">
+                <h4>${career.title}</h4>
+                <div class="saved-career-meta">
+                    <span><i class="fas fa-money-bill-wave"></i> ${career.salary}</span>
+                    <span><i class="fas fa-chart-line"></i> ${career.growth}</span>
+                </div>
+                <p>${career.description}</p>
+            </div>
+            <div class="saved-career-actions">
+                <button class="btn btn-secondary" onclick="viewCareerDetails(${career.id})">
+                    <i class="fas fa-eye"></i> View
+                </button>
+                <button class="btn btn-danger" onclick="removeSavedCareer(${career.id})">
+                    <i class="fas fa-trash"></i> Remove
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Remove saved career
+function removeSavedCareer(careerId) {
+    savedCareers = savedCareers.filter(c => c.id !== careerId);
+    if (currentUser) {
+        currentUser.savedCareers = savedCareers;
+        saveUserData();
+    }
+    renderSavedCareers();
+    updateSaveButtons();
+    showNotification('Career removed from saved', 'success');
+}
+
+// View career details
+function viewCareerDetails(careerId) {
+    // Scroll to career paths and highlight the career
+    document.querySelector('#career-paths').scrollIntoView({ behavior: 'smooth' });
+    // You could add more detailed view functionality here
+}
+
 // Populate career paths from database
 function populateCareerPaths() {
     careerPathsContainer.innerHTML = '';
@@ -1201,10 +1340,13 @@ function populateCareerPaths() {
 
 // Create individual career card
 function createCareerCard(career) {
+    const isSaved = savedCareers.some(c => c.id === career.id);
+    
     const careerCard = document.createElement('div');
     careerCard.className = 'path-card';
     careerCard.dataset.field = career.category;
     careerCard.dataset.title = career.title.toLowerCase();
+    careerCard.dataset.id = career.id;
     
     careerCard.innerHTML = `
         <div class="path-image" style="background-image: url('${career.imageUrl}')">
@@ -1222,7 +1364,9 @@ function createCareerCard(career) {
             </div>
             <div class="path-actions">
                 <button class="btn btn-secondary">Learn More</button>
-                <button class="btn btn-primary">Save</button>
+                <button class="btn btn-primary save-btn ${isSaved ? 'saved' : ''}" onclick="saveCareer(${career.id})">
+                    <i class="${isSaved ? 'fas' : 'far'} fa-bookmark"></i> ${isSaved ? 'Saved' : 'Save'}
+                </button>
             </div>
         </div>
     `;
@@ -1439,6 +1583,9 @@ function updateDashboard() {
     
     // Update resources
     renderResources(userResults);
+    
+    // Update saved careers
+    renderSavedCareers();
 }
 
 function renderDashboardMatches(results) {
@@ -1609,8 +1756,10 @@ function renderResults(results) {
     resultsContainer.innerHTML = '';
     
     results.forEach(career => {
+        const isSaved = savedCareers.some(c => c.id === career.id);
         const resultEl = document.createElement('div');
         resultEl.className = 'result-card';
+        resultEl.dataset.id = career.id;
         
         resultEl.innerHTML = `
             <div class="result-header">
@@ -1631,7 +1780,9 @@ function renderResults(results) {
                 </div>
                 <div class="result-actions">
                     <button class="btn btn-secondary">Learn More</button>
-                    <button class="btn btn-primary">Save Path</button>
+                    <button class="btn btn-primary save-path-btn ${isSaved ? 'saved' : ''}" onclick="saveCareer(${career.id})">
+                        <i class="${isSaved ? 'fas' : 'far'} fa-bookmark"></i> ${isSaved ? 'Saved' : 'Save Path'}
+                    </button>
                 </div>
             </div>
         `;
