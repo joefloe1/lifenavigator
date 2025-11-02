@@ -495,52 +495,261 @@
     </section>
 
     <!-- Dashboard Preview -->
-    <section class="dashboard-preview">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Personalized Life Navigator</h2>
-                <p>Track your progress, explore opportunities, and get personalized recommendations all in one place</p>
-            </div>
-            <div class="dashboard-container">
-                <div class="dashboard-mockup">
-                    <div class="dashboard-header">
-                        <div class="logo">
+    <!-- Enhanced Dashboard Preview -->
+<section class="dashboard-preview" id="dashboard-preview">
+    <div class="container">
+        <div class="section-header">
+            <h2>Your Personalized Life Navigator</h2>
+            <p>Track your progress, explore opportunities, and get personalized recommendations all in one place</p>
+        </div>
+        
+        <div class="preview-container">
+            <div class="preview-mockup">
+                <!-- Mockup Header -->
+                <div class="mockup-header">
+                    <div class="mockup-nav">
+                        <div class="mockup-logo">
                             <div class="logo-icon">LN</div>
-                            <div class="logo-text">Life Navigator</div>
+                            <span>Life Navigator</span>
                         </div>
-                        <div class="user-menu">
-                            <i class="fas fa-user-circle"></i>
+                        <div class="mockup-nav-items">
+                            <span class="nav-item active">Dashboard</span>
+                            <span class="nav-item">Assessment</span>
+                            <span class="nav-item">Paths</span>
+                            <span class="nav-item">Resources</span>
+                        </div>
+                        <div class="mockup-user">
+                            <div class="user-avatar">JD</div>
                         </div>
                     </div>
-                    <div class="dashboard-content">
-                        <div class="dashboard-sidebar">
-                            <h4>Navigation</h4>
-                            <ul>
-                                <li>Dashboard</li>
-                                <li>Life Assessment</li>
-                                <li>My Paths</li>
-                                <li>Learning Resources</li>
-                                <li>Progress Tracking</li>
-                            </ul>
+                </div>
+
+                <!-- Mockup Content -->
+                <div class="mockup-content">
+                    <!-- Sidebar -->
+                    <div class="mockup-sidebar">
+                        <div class="sidebar-section">
+                            <h4>Quick Access</h4>
+                            <div class="sidebar-item active">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Progress</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <i class="fas fa-road"></i>
+                                <span>My Paths</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Learning</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Opportunities</span>
+                            </div>
                         </div>
-                        <div class="dashboard-main">
-                            <div class="dashboard-card">
-                                <h4>Path Matches</h4>
-                                <p>Your top 3 path matches based on your assessment</p>
+                        
+                        <div class="sidebar-section">
+                            <h4>My Goals</h4>
+                            <div class="goal-item">
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 75%"></div>
+                                    </div>
+                                    <span>Career Transition</span>
+                                </div>
                             </div>
-                            <div class="dashboard-card">
-                                <h4>Progress Tracking</h4>
-                                <p>Track your progress toward life goals</p>
-                            </div>
-                            <div class="dashboard-card">
-                                <h4>Skill Gap Analysis</h4>
-                                <p>Identify skills you need to develop</p>
-                            </div>
-                            <div class="dashboard-card">
-                                <h4>Recommended Resources</h4>
-                                <p>Courses and resources tailored to your goals</p>
+                            <div class="goal-item">
+                                <div class="goal-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 40%"></div>
+                                    </div>
+                                    <span>Skill Development</span>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="mockup-main">
+                        <!-- Stats Row -->
+                        <div class="stats-row">
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>95%</h3>
+                                    <p>Match Score</p>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-target"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>3</h3>
+                                    <p>Top Paths</p>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>65%</h3>
+                                    <p>Profile Complete</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Grid -->
+                        <div class="content-grid">
+                            <div class="content-card large">
+                                <div class="card-header">
+                                    <h4>Your Path Matches</h4>
+                                    <span class="view-all">View All</span>
+                                </div>
+                                <div class="path-list">
+                                    <div class="path-item">
+                                        <div class="path-icon">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </div>
+                                        <div class="path-details">
+                                            <h5>Software Developer</h5>
+                                            <p>95% Match • $85K-$150K</p>
+                                            </div>
+                                        <div class="match-badge">95%</div>
+                                    </div>
+                                        <div class="path-item">
+                                            <div class="path-icon">
+                                                <i class="fas fa-database"></i>
+                                            </div>
+                                            <div class="path-details">
+                                                <h5>Data Scientist</h5>
+                                                <p>88% Match • $120K-$180K</p>
+                                            </div>
+                                            <div class="match-badge">88%</div>
+                                        </div>
+                                        <div class="path-item">
+                                            <div class="path-icon">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <div class="path-details">
+                                                <h5>Cybersecurity Analyst</h5>
+                                                <p>82% Match • $95K-$140K</p>
+                                            </div>
+                                            <div class="match-badge">82%</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-card">
+                                    <div class="card-header">
+                                        <h4>Progress Tracking</h4>
+                                    </div>
+                                    <div class="progress-chart">
+                                        <div class="chart-item">
+                                            <span>Career Assessment</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 100%"></div>
+                                            </div>
+                                            <span>100%</span>
+                                        </div>
+                                        <div class="chart-item">
+                                            <span>Skill Development</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 65%"></div>
+                                            </div>
+                                            <span>65%</span>
+                                        </div>
+                                        <div class="chart-item">
+                                            <span>Profile Completion</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 80%"></div>
+                                            </div>
+                                            <span>80%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-card">
+                                    <div class="card-header">
+                                        <h4>Next Steps</h4>
+                                    </div>
+                                    <div class="steps-list">
+                                        <div class="step-item">
+                                            <div class="step-indicator"></div>
+                                            <span>Complete skill assessment</span>
+                                        </div>
+                                        <div class="step-item">
+                                            <div class="step-indicator"></div>
+                                            <span>Explore software development paths</span>
+                                        </div>
+                                        <div class="step-item">
+                                            <div class="step-indicator"></div>
+                                            <span>Connect with industry mentors</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-card">
+                                    <div class="card-header">
+                                        <h4>Recommended Resources</h4>
+                                    </div>
+                                    <div class="resources-preview">
+                                        <div class="resource-item">
+                                            <i class="fas fa-book"></i>
+                                            <span>Web Development Fundamentals</span>
+                                        </div>
+                                        <div class="resource-item">
+                                            <i class="fas fa-video"></i>
+                                            <span>Data Structures Course</span>
+                                        </div>
+                                        <div class="resource-item">
+                                            <i class="fas fa-users"></i>
+                                            <span>Tech Career Networking</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-features">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Progress Tracking</h4>
+                        <p>Monitor your growth and celebrate milestones with detailed progress analytics</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h4>Clear Pathways</h4>
+                        <p>Follow step-by-step roadmaps tailored to your chosen life paths</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Smart Recommendations</h4>
+                        <p>Get personalized suggestions based on your skills and interests</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Learning Resources</h4>
+                        <p>Access curated courses and materials to develop necessary skills</p>
                     </div>
                 </div>
             </div>
