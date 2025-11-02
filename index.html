@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Navigator | Find Your Path</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon">LN</div>
+                    <div class="logo-text">Life Navigator</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#career-paths">Career Paths</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn btn-secondary" id="login-btn">Sign In</button>
+                    <button class="btn btn-primary" id="signup-btn">Get Started</button>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <div class="logo-icon">LN</div>
+                <div class="logo-text">Life Navigator</div>
+            </a>
+            <button class="mobile-menu-btn" id="close-menu-btn" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#career-paths">Career Paths</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <div class="mobile-menu-actions">
+            <button class="btn btn-secondary" id="mobile-login-btn">Sign In</button>
+            <button class="btn btn-primary" id="mobile-signup-btn">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Navigate Your Life Journey</h1>
+                    <p>Discover your path with personalized guidance, actionable insights, and tools to help you make informed life decisions.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="start-assessment-btn">Take Assessment</button>
+                        <button class="btn btn-secondary">Explore Paths</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">15K+</div>
+                            <div class="stat-label">Successful Navigations</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">750+</div>
+                            <div class="stat-label">Life Paths</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h3>Find Your Direction</h3>
+                        <p>Discover paths aligned with your values and goals</p>
+                    </div>
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growth Tracking</h3>
+                        <p>Monitor your progress and celebrate milestones</p>
+                    </div>
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Learning Paths</h3>
+                        <p>Get personalized recommendations for development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Life Navigator</h2>
+                <p>Our platform combines personalized guidance with actionable insights to help you navigate life's decisions</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Personalized Matching</h3>
+                    <p>Our algorithm matches your unique profile with paths that fit your skills, interests, and values.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Get detailed insights into opportunities, requirements, and potential outcomes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Clear Life Pathways</h3>
+                    <p>Visualize your journey with step-by-step pathways and milestone tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Learning Resources</h3>
+                    <p>Access curated courses, tools, and resources to develop necessary skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Market Insights</h3>
+                    <p>Stay informed about trends, opportunities, and emerging possibilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Expert Guidance</h3>
+                    <p>Connect with mentors and professionals for personalized advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Finding your ideal path is simple with our step-by-step process</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create Your Profile</h3>
+                        <p>Tell us about your skills, interests, values, and aspirations.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Take Assessment</h3>
+                        <p>Complete our comprehensive assessment to identify your strengths and preferences.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Matched</h3>
+                        <p>Receive personalized path recommendations based on your unique profile.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Plan Your Journey</h3>
+                        <p>Create an actionable plan with steps to achieve your life goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life Assessment Section -->
+    <section class="section assessment" id="assessment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Life Path Assessment</h2>
+                <p>Take our quick assessment to discover paths that match your personality and skills</p>
+            </div>
+            <div class="assessment-container">
+                <div class="assessment-progress">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-bar" style="width: 20%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>Question <span id="current-question">1</span> of 5</span>
+                        <span id="progress-percent">20% Complete</span>
+                    </div>
+                </div>
+                <div class="assessment-question">
+                    <h3 id="question-text">What type of environment do you thrive in?</h3>
+                    <div class="assessment-options" id="options-container">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="assessment-actions">
+                    <button class="btn btn-secondary" id="prev-btn" disabled>
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button class="btn btn-primary" id="next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results-section" id="results" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Life Path Matches</h2>
+                <p>Based on your assessment results, here are paths that align with your personality, interests, and skills.</p>
+            </div>
+            <div class="results-grid" id="results-container">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <button class="btn btn-primary" id="retake-assessment">
+                    <i class="fas fa-redo"></i>
+                    Retake Assessment
+                </button>
+                <button class="btn btn-secondary" id="view-dashboard" style="margin-left: 1rem;">
+                    <i class="fas fa-tachometer-alt"></i>
+                    View Dashboard
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Dashboard -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="dashboard-welcome">
+                    <h1>Welcome to Your Life Navigator, <span id="user-name">User</span>!</h1>
+                    <p>Your personalized guidance and progress tracking center</p>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="btn btn-secondary" id="back-to-results">
+                        <i class="fas fa-arrow-left"></i> Back to Results
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="top-match-score">95%</div>
+                    <div class="stat-label">Top Match Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="careers-explored">3</div>
+                    <div class="stat-label">Paths Explored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="skills-identified">12</div>
+                    <div class="stat-label">Skills Identified</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="progress-percentage">25%</div>
+                    <div class="stat-label">Profile Completion</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-main">
+                    <!-- Path Matches Card -->
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-chart-line"></i> Your Path Matches</h3>
+                        <div id="dashboard-matches">
+                            <!-- Path matches will be populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Personalized Advice Card -->
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-lightbulb"></i> Personalized Guidance</h3>
+                        <div class="match-analysis">
+                            <p>Based on your assessment results, we've identified key patterns in your preferences and skills. Here's our analysis and recommendations:</p>
+                            
+                            <div class="next-steps">
+                                <h4>Your Next Steps</h4>
+                                <ul class="steps-list" id="next-steps-list">
+                                    <!-- Next steps will be populated here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Development Card -->
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-tools"></i> Skill Development Plan</h3>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Technical Skills</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Soft Skills</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Industry Knowledge</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-tags">
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Technical Writing</span>
+                            <span class="skill-tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-sidebar">
+                    <!-- Recommended Resources -->
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-book"></i> Recommended Resources</h3>
+                        <ul class="resources-list" id="resources-list">
+                            <!-- Resources will be populated here -->
+                        </ul>
+                    </div>
+
+                    <!-- Progress Tracking -->
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-tasks"></i> Your Progress</h3>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Life Assessment</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Profile Completion</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Skill Development</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <button class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-search"></i> Explore More Paths
+                            </button>
+                            <button class="btn btn-secondary" style="width: 100%;">
+                                <i class="fas fa-graduation-cap"></i> Find Courses
+                            </button>
+                            <button class="btn btn-secondary" style="width: 100%;">
+                                <i class="fas fa-user-tie"></i> Connect with Mentor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life Paths Section -->
+    <section class="section career-paths" id="career-paths">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore Life Paths</h2>
+                <p>Browse through hundreds of path options across different areas of life</p>
+            </div>
+            
+            <div class="career-filter-container">
+                <div class="filter-dropdown">
+                    <label for="category-filter">Filter by Category:</label>
+                    <select id="category-filter" class="category-filter">
+                        <option value="all">All Careers</option>
+                        <option value="technology">Technology</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="business">Business</option>
+                        <option value="creative">Creative</option>
+                        <option value="education">Education</option>
+                        <option value="trades">Trades</option>
+                        <option value="science">Science</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="career-search" placeholder="Search careers..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+            
+            <div class="paths-grid" id="career-paths-container">
+                <!-- Career cards will be populated by JavaScript -->
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" id="load-more-careers">Load More Careers</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>See how Life Navigator has helped people find fulfilling paths</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">JS</div>
+                    <div class="testimonial-text">
+                        "Life Navigator completely changed my trajectory. I went from feeling stuck to finding a path that aligns with my passions and skills. The assessment was incredibly accurate!"
+                    </div>
+                    <div class="testimonial-author">Jessica Smith</div>
+                    <div class="testimonial-role">UX Designer at TechVision</div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn" id="next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="dashboard-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Personalized Life Navigator</h2>
+                <p>Track your progress, explore opportunities, and get personalized recommendations all in one place</p>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-mockup">
+                    <div class="dashboard-header">
+                        <div class="logo">
+                            <div class="logo-icon">LN</div>
+                            <div class="logo-text">Life Navigator</div>
+                        </div>
+                        <div class="user-menu">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="dashboard-sidebar">
+                            <h4>Navigation</h4>
+                            <ul>
+                                <li>Dashboard</li>
+                                <li>Life Assessment</li>
+                                <li>My Paths</li>
+                                <li>Learning Resources</li>
+                                <li>Progress Tracking</li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-main">
+                            <div class="dashboard-card">
+                                <h4>Path Matches</h4>
+                                <p>Your top 3 path matches based on your assessment</p>
+                            </div>
+                            <div class="dashboard-card">
+                                <h4>Progress Tracking</h4>
+                                <p>Track your progress toward life goals</p>
+                            </div>
+                            <div class="dashboard-card">
+                                <h4>Skill Gap Analysis</h4>
+                                <p>Identify skills you need to develop</p>
+                            </div>
+                            <div class="dashboard-card">
+                                <h4>Recommended Resources</h4>
+                                <p>Courses and resources tailored to your goals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section class="signup" id="signup">
+        <div class="container">
+            <h2>Ready to Navigate Your Life Journey?</h2>
+            <p>Join thousands of users who have discovered their ideal path with our platform</p>
+            <form class="signup-form">
+                <input type="email" class="form-input" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Get Started</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">LN</div>
+                        <div class="logo-text">Life Navigator</div>
+                    </div>
+                    <p>Helping individuals discover fulfilling paths through personalized matching, comprehensive resources, and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-heading">Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Life Assessment</a></li>
+                        <li><a href="#">Life Paths</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-heading">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-heading">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Life Navigator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Welcome to Life Navigator</h2>
+                <button class="auth-close" id="auth-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="login-tab">Login</button>
+                <button class="auth-tab" id="signup-tab">Sign Up</button>
+            </div>
+            <div class="auth-content">
+                <form class="auth-form" id="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Email</label>
+                        <input type="email" class="form-control" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="login-password">Password</label>
+                        <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary auth-submit">Login</button>
+                    <div class="auth-switch">
+                        Don't have an account? <a href="#" id="switch-to-signup">Sign up</a>
+                    </div>
+                </form>
+                <form class="auth-form" id="signup-form" style="display: none;">
+                    <div class="form-group">
+                        <label class="form-label" for="signup-name">Full Name</label>
+                        <input type="text" class="form-control" id="signup-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-email">Email</label>
+                        <input type="email" class="form-control" id="signup-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-password">Password</label>
+                        <input type="password" class="form-control" id="signup-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-confirm">Confirm Password</label>
+                        <input type="password" class="form-control" id="signup-confirm" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary auth-submit">Create Account</button>
+                    <div class="auth-switch">
+                        Already have an account? <a href="#" id="switch-to-login">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
